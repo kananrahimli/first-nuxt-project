@@ -1,12 +1,12 @@
 <template>
   <div class="banner d-flex justify-content-center align-items-center">
-     <h1 class="text-white ">Kose | Yazisi</h1>
+     <h1 class="text-white ">{{title}}</h1>
   </div>
 </template>
 
 <script>
 export default {
-
+    props:['title']
 }
 </script>
 

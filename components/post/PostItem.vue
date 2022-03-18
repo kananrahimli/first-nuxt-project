@@ -1,21 +1,36 @@
 <template>
   <div class="col-md-2 mt-5">
     <div class="post-item">
-      <h2>Post Title</h2>
-      <h4>Post subtitle</h4>
+      <h2>{{post.title}}</h2>
+      <h4>{{post.subtitle}}</h4>
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam
-        cupiditate pariatur maxime molestiae minima? Ducimus, eveniet! Expedita
-        aliquam quis sed sequi doloremque nisi necessitatibus inventore pariatur
-        officiis? Debitis, nam recusandae?
+       {{post.text}}
       </p>
-      <nuxt-link class="post-see" to="">Goruntule</nuxt-link>
+      
+      <div v-if="isAdmin">
+        <nuxt-link class="btn btn-outline-warning" :to="'/admin/'+post.id+'/edit'"> Duzenle</nuxt-link>
+      <nuxt-link class="btn btn-outline-danger" to="">Sil</nuxt-link>
+      </div>
+      <nuxt-link v-else class="btn btn-outline-info" :to="'/posts/'+post.id">Goruntule</nuxt-link>
+      
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props:{
+    isAdmin:{
+      type:Boolean,
+      required:false,
+      default:false
+    },
+    post:{
+      required:true,
+      type:Object
+    }
+  }
+};
 </script>
 
 <style scoped>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header></Header>
-    <Banner title="Kose Yazisi"></Banner>
+    <Banner title="Yazi basligi"></Banner>
     <Nuxt />
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
     <div class="header d-flex justify-content-between align-items-center p-3">
         <div class="d-flex justify-content-between align-items-center">
-            <h5 class="header-logo mt-2">Kose yazisi</h5>
+            <h5 class="header-logo mt-2"><nuxt-link to="/" tag="a">Kose yazisi</nuxt-link></h5>
             <nuxt-link to="/posts" class="ml-4" tag="a">Yazilar</nuxt-link>
         </div>
         <div>
