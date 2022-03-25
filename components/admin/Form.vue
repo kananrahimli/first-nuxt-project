@@ -45,7 +45,16 @@
 
 <script>
 export default {
-  props: ["formTitle"],
+  props: {
+    formTitle:{
+      type:String,
+      required:true
+    },
+    edit:{
+      type:Object,
+      required:false,
+    }
+  },
   emits:['onSubmit'],
   data(){
       return{
@@ -57,13 +66,16 @@ export default {
           }
       }
   },
+  
 
   methods:{
       submit(){
           this.$emit('onSubmit',this.data)
       }
+  },
+  created(){
+    this.data=this.edit?this.edit:this.data
   }
-  
 };
 </script>
 

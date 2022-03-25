@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PostList :posts="posts"></PostList>
+    <PostList :posts="getPosts"></PostList>
     <About></About>
   </div>
 </template>
@@ -14,6 +14,12 @@ export default {
     PostList,
     About,
   },
+  computed:{
+    getPosts(){
+      return this.$store.getters.posts
+    }
+  },
+  
   // data(){
   //   return{
   //     posts:[
@@ -23,27 +29,27 @@ export default {
   //   }
   // },
 
-  asyncData(context, callback) {
-    setTimeout(() => {
-      callback(null, {
-        posts: [
-          {
-            id: 1,
-            title: "Post-title 1",
-            subtitle: "Post Sub-Title 2",
-            author: "Kanan",
-            text: "Salam en yaxsi framework heqiqeten vuedir. Nuxt ile vapse bomba olur",
-          },
-          {
-            id: 2,
-            title: "Post-title 2",
-            subtitle: "Post Sub-Title 2",
-            author: "Goshgar",
-            text: "Salam en yaxsi framework heqiqeten Angulardir.Angular ile mesgul olun. ",
-          },
-        ],
-      });
-    }, 2000);
-  },
+  // fetch(context, callback) {
+  //   setTimeout(() => {
+  //     callback(null, {
+  //       posts: [
+  //         {
+  //           id: 1,
+  //           title: "Post-title 1",
+  //           subtitle: "Post Sub-Title 2",
+  //           author: "Kanan",
+  //           text: "Salam en yaxsi framework heqiqeten vuedir. Nuxt ile vapse bomba olur",
+  //         },
+  //         {
+  //           id: 2,
+  //           title: "Post-title 2",
+  //           subtitle: "Post Sub-Title 2",
+  //           author: "Goshgar",
+  //           text: "Salam en yaxsi framework heqiqeten Angulardir.Angular ile mesgul olun. ",
+  //         },
+  //       ],
+  //     });
+  //   }, 2000);
+  // },
 };
 </script>
