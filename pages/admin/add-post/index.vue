@@ -13,10 +13,9 @@ export default {
   },
   methods:{
     async submit(data){
-     await axios.post('https://kose-yazisi-nuxt-js-default-rtdb.firebaseio.com/posts.json',data).then(()=>{
-       this.$router.push('/admin')
-     })
-    }
+    await this.$store.dispatch('newPost',data)
+     await this.$router.push('/admin')
+    },
   }
 }
 </script>

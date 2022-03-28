@@ -75,6 +75,7 @@ export default {
   },
   created(){
     this.data=this.edit?this.edit:this.data
+    console.log(this.$route.params.postId);
   }
 };
 </script>
