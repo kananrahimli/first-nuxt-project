@@ -7,7 +7,7 @@
 
 <script>
 export default {
-
+middleware:['session-control','auth'],
 }
 </script>
 

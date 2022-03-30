@@ -10,6 +10,7 @@
 
 import Header from '../components/common/Header.vue'
 export default {
+  middleware:['session-control','auth'],
   components:{
     
     Header

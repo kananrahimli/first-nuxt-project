@@ -14,6 +14,7 @@ export default {
     PostList,
     
   },
+  
   computed:{
     getPosts(){
       return this.$store.getters.posts

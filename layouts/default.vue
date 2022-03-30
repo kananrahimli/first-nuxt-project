@@ -13,7 +13,8 @@ export default {
   components:{
     Banner,
     Header
-  }
+  },
+  middleware:['session-control','auth']
 }
 </script>
 

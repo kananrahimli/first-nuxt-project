@@ -51,5 +51,8 @@ export default {
   transition:{
     name:'layout',
       mode:'out-in'
+  },
+  env:{
+    apiKey:'AIzaSyAqt1_7SSVYI-4ol0YtdHNLXKVDoSay0EY'
   }
 }
